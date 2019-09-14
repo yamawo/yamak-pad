@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <header class="header">
+        <div class="header__title uk-heading-divider">
+            miniapp
+        </div>
+    </header>
+    <div class="contents">
+        <% @tweets.each do |tweet| %>
+        <%= render partial: "article", locals: { tweet: tweet }%>
+        <% end %>
+    </div>
+    <%= paginate(@tweets) %>
+</div>

@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <header class="header">
+      <% if user_signed_in? %>
+        <ul class="header__info">
+          <li>
+            <%= link_to "マイページ", user_path(current_user.id)%>
+            <%= link_to "サインアウト", destroy_user_session_path, method: :delete%>
+          </li>
+        </ul>  
+          <div class="header__tweet">
+            <%= link_to "レシピを作る", new_tweet_path%>
+          </div>
+      <% else %>
+          <div class="header__sign-up">
+            <%= link_to "新規アカウント登録", new_user_registration_path%>
+          </div>
+          <div class="header__sign-in">
+            <%= link_to "サインイン", new_user_session_path%>
+          </div>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

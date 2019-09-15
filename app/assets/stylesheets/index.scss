@@ -1,0 +1,33 @@
+//application + indexページのCSS
+ .header {
+    height: 90px;
+    width: 100%;
+    position: relative;
+    padding-top: 30px;
+    background-color: #d2b48c;
+    &__title {
+        font-size: 40px;
+        text-align: center;
+        font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    }
+    &__name {
+        float: right;
+        margin: 0 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 1100px;
+        color: black;
+    }
+    &__info {
+        float: right;
+        margin: 0 20px;
+        position: absolute;
+        top: 60px;
+        right: 0px;
+        bottom: 20px;
+        left: 940px;
+        color: black;
+    }
+}

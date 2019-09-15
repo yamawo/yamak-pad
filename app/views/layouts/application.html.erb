@@ -10,6 +10,38 @@
   </head>
 
   <body>
+    <header class="header">
+        <h2 class="header__title">mini-pad</h2>
+      <% if user_signed_in? %>
+        <p class="header__name">こんにちは、<strong><%= current_user.nickname %></strong>さん</p>  
+          <ul class="header__info uk-breadcrumb uk-text-bold">
+            <li>
+              <%= link_to "レシピを作る", new_tweet_path%>
+            </li>
+            <li>
+              <%= link_to "マイページ", user_path(current_user.id)%>
+            </li>
+            <li>
+              <%= link_to "サインアウト", destroy_user_session_path, method: :delete%>
+            </li>
+            <li>
+              <%= link_to "ホームへ", root_path%>
+            </li>
+          </ul>  
+        <% else %>
+          <ul class="header__info uk-breadcrumb">
+            <li>
+              <%= link_to "サインイン", new_user_session_path%>
+            </li>
+            <li>
+              <%= link_to "新規アカウント登録", new_user_registration_path%>
+            </li>
+            <li>
+              <%= link_to "ホームへ", root_path%>
+            </li>
+          </ul>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

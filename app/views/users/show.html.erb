@@ -1,0 +1,7 @@
+<h3 class="uk-text-center"><%= @nickname %>さんの投稿一覧</h3>
+    <% @tweets.each do |tweet| %>
+    <%= render partial: "article", locals: { tweet: tweet}%>
+    <% end %>
+    <%= paginate(@tweets) %>
+</div>
+

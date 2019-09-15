@@ -1,0 +1,33 @@
+<%# 記事がはいるところ %>
+<div class="article">
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
+        <div class="uk-card-media-left uk-cover-container">
+            <img src="<%= tweet.image %>" alt="" uk-cover>
+            <canvas width="600" height="400"></canvas>
+        </div>
+        <div class="uk-card-body" style="position:relative">
+            <h3 class="uk-card-title uk-heading-divider"><%= tweet.title %></h3>
+            <mark><%= tweet.cooking_type %></mark>
+            <div class="more">
+                <ul class="more__list">
+                    <li>
+                        <%= link_to 'レシピ詳細', tweet_path(tweet.id), class: "uk-button uk-button-default" %>
+                    </li>
+                    <% if user_signed_in? && current_user.id == tweet.user_id %>
+                    <li>
+                        <%= link_to 'レシピ編集', edit_tweet_path(tweet.id), class: "uk-button uk-button-default"%>
+                    </li>    
+                    <li>
+                        <%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "uk-button uk-button-default"%>
+                    </li>
+                </ul>
+                    <% end %>
+            </div>
+            <a href="/users/<%= tweet.user_id %>" class="more__user">
+                <span>投稿者 : </span><%= tweet.user.nickname %>
+            </a>
+        </div>
+    </div>
+</div>
+
+

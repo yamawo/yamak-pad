@@ -1,0 +1,18 @@
+<div class="form-style">
+    <%= form_for @tweet do |f| %>
+        <fieldset>
+            <legend><span class="number">1</span> 料理を編集する</legend>
+            <%= f.text_field :title, placeholder: "料理名 *" %>
+            <%= f.text_area :material, placeholder: "材料 *" %>
+            <%= f.text_field :cost, placeholder: "コスト *" %>
+            <%= f.file_field :image %>
+            <%= f.label :job , "料理種別:" %>
+            <%= f.select :cooking_type, ["すし・魚料理", "和食・日本料理", "麺類", "丼もの・揚げ物", "粉物", "郷土料理", "アジア・エスニック", "中華", "イタリアン", "養殖・西洋料理", "フレンチ", "焼肉・ステーキ", "焼き鳥・串料理", "鍋", "スイーツ", "その他"], id: "job" %>
+        </fieldset>
+        <fieldset>
+            <legend><span class="number">2</span> 説明を編集する</legend>
+            <%= f.text_area :text, placeholder: "調理工程、料理の説明など" %>
+        </fieldset>
+        <%= f.submit %>
+    <% end %>
+</div>

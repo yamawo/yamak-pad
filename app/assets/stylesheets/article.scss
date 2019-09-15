@@ -1,0 +1,33 @@
+/* // Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.article {
+    height: 100%;
+    width: 900px;
+    margin: 50px auto;
+    .more{
+        position: absolute;
+        top: 60px;
+        right: 0px;
+        bottom: 20px;
+        left: 400px;
+        height: 100%;
+        width: 100%;
+        &__list {
+        
+            .li {
+                
+            }
+        }
+        &__user {
+            position: absolute;
+            top: 165px;
+            right: 0px;
+            bottom: 10px;
+            left: 40px;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

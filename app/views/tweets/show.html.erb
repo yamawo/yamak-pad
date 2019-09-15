@@ -1,0 +1,22 @@
+<div class="uk-container">
+    <div class="uk-container__header">
+        <h2 class="uk-container__header__title uk-heading-divider"><%= @tweet.title%>  <ins>(<%= @tweet.cooking_type%>)</ins></h2>
+    </div>
+    <div class="uk-container__comment">
+        <%= @tweet.text%>
+        <a href="/users/<%= @tweet.user_id %>" class="uk-container__comment__user">
+            <span>投稿者 : </span><%= @tweet.user.nickname %>
+        </a>
+    </div>
+    <div class="uk-container__image">
+        <img src="<%= @tweet.image%>" alt="">
+    </div>
+    <div class="uk-container__cost">
+        <h3 class="uk-heading-divider">コスト</h3>
+        <%= @tweet.cost%>
+    </div>
+    <div class="uk-container__material">
+        <h3 class="uk-heading-divider">材料</h3>
+        <%= simple_format(@tweet.material)%>
+    </div>
+</div>

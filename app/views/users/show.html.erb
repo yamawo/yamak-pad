@@ -1,10 +1,6 @@
-<div class="">
-    <p><%= @nickname %>さんのマイページ</p>
+<h3 class="uk-text-center"><%= @nickname %>さんの投稿一覧</h3>
     <% @tweets.each do |tweet| %>
-        <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-            <%= tweet.title %>
-            <%= simple_format(tweet.text) %>
-        </div>
+    <%= render partial: "article", locals: { tweet: tweet}%>
     <% end %>
     <%= paginate(@tweets) %>
 </div>

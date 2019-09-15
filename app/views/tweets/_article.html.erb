@@ -2,10 +2,28 @@
 <div class="article">
     <h3><%= tweet.title %></h3>
 
-    <%= tweet.text %>
     <%= tweet.cooking_type %>
     <%= tweet.material %>
     <%= tweet.image %>
+      <div class="more">
+        <ul class="more_list">
+            <li>
+                <%= link_to '詳細', tweet_path(tweet.id) %>
+            </li>
+            <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <li>
+                <%= link_to '編集', edit_tweet_path(tweet.id) %>
+            </li>    
+            <li>
+                <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+            </li>
+        </ul>
+      </div>
+    <% end %>
+    <%= simple_format(tweet.text) %>
+    <a href="/users/<%= tweet.user_id %>">
+        <span>投稿者</span><%= tweet.user.nickname %>
+    </a>
 </div>
 
 
